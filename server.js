@@ -6,6 +6,7 @@ const port = 3000;
 /**
  * Pull in component routes
  */
+const health = require('./Components/Health/routes');
 const leases = require('./Components/Leases/routes');
 
 /**
@@ -20,6 +21,7 @@ app.use(express.urlencoded({
 /**
  * Endpoints
  */
+app.use('/health', health);
 app.use('/leases', leases);
 
 /**
