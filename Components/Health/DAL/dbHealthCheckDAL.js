@@ -1,4 +1,3 @@
-const _ = require('lodash');
 const db = require('./../../../Connections');
 
 module.exports = function dbHealthCheckDAL() {
