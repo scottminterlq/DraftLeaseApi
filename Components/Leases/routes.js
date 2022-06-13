@@ -4,14 +4,18 @@ const router = app.Router();
 const ctrl = require('./Controller');
 
 router.get('/', (req, res) => {
-  res.json({
-    message: 'Get all leases',
-  });
+  ctrl.getAllLeases()
+    .then((leases) => {
+      res.json(leases);
+    })
+    .catch((err) => {
+      res.status(400).send(err);
+    })
 });
 
 router.get('/:id', (req, res) => {
   const leaseId = _.get(req.params, 'id', null);
-  console.log('lease id: ' + leaseId);
+
   ctrl.getLeaseById(leaseId)
     .then((data) => {
       res.json(data);
