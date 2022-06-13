@@ -15,7 +15,7 @@ const leases = require('./Components/Leases/routes');
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({
-    extended: true,
+  extended: true,
 }));
 
 /**
@@ -28,5 +28,5 @@ app.use('/leases', leases);
  * Server running
  */
 app.listen(port, () => {
-    console.log(`App is listening on post ${port}`);
+  console.log(`App is listening on post ${port}`);
 });
