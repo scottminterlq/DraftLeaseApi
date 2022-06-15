@@ -1,8 +1,8 @@
-const DAL = require('./../DAL');
+const DAL = require('../DAL');
 
-module.exports = function GetLeaseById(id) {
+module.exports = function GetLeaseByValue(field, value) {
   return new Promise((resolve, reject) => {
-    DAL.getLeaseById(id)
+    DAL.getLeaseByValue(field, value)
       .then((leaseData) => {
         resolve(leaseData);
       })
